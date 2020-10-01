@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.ppanticona"
+    },
+    "jhipsterVersion": "6.10.3",
+    "applicationType": "monolith",
+    "baseName": "hugo",
+    "packageName": "com.ppanticona",
+    "packageFolder": "com/ppanticona",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NTI4N2E0NzJiZWNmNGI1NmY1NjQ2MmZmYjlmZDAyODNkYTVmMDAzODNhMDhkNWY5ZDhhYTY0YTFmZDdjNjg1ODM3OGQ4YWYwY2U3MmJmMzE4Yzg1ZDQ5OWYzNzgxOTk2YzJjMWM3Y2FiNTI0N2E4ZTQyYzIwMmFlM2M4ZTFjNmE=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "minty",
+    "clientThemeVariant": "primary",
+    "creationTimestamp": 1601574096350,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
