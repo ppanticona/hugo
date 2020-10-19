@@ -1,0 +1,149 @@
+<div>
+    <h2 id="page-heading">
+        <span>Reg Ventas</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-reg-venta" [routerLink]="['/reg-venta/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Reg Venta
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="regVentas?.length === 0">
+        <span>No regVentas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="regVentas && regVentas.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Periodo</span></th>
+                    <th scope="col" ><span>Mes</span></th>
+                    <th scope="col" ><span>Asient Contab</span></th>
+                    <th scope="col" ><span>Fec Emi Comp</span></th>
+                    <th scope="col" ><span>Fec Venc Comp</span></th>
+                    <th scope="col" ><span>Tip Comp</span></th>
+                    <th scope="col" ><span>Nro Serie Comp</span></th>
+                    <th scope="col" ><span>Nro Comp</span></th>
+                    <th scope="col" ><span>Conso Dia</span></th>
+                    <th scope="col" ><span>Tip Doc Cli</span></th>
+                    <th scope="col" ><span>Nro Doc Cli</span></th>
+                    <th scope="col" ><span>Ape Raz Soc Cli</span></th>
+                    <th scope="col" ><span>Val Fac Expor</span></th>
+                    <th scope="col" ><span>Base Imp Oper Grav</span></th>
+                    <th scope="col" ><span>Dscto Base Imp</span></th>
+                    <th scope="col" ><span>Igv Ipm</span></th>
+                    <th scope="col" ><span>Dscto Igv Ipm</span></th>
+                    <th scope="col" ><span>Imp Ope Exo</span></th>
+                    <th scope="col" ><span>Imp Tot Ope Inafec</span></th>
+                    <th scope="col" ><span>Imp Sec Cons</span></th>
+                    <th scope="col" ><span>Base Imp Arroz</span></th>
+                    <th scope="col" ><span>Imp Vent Arroz</span></th>
+                    <th scope="col" ><span>Otros No Base Imp</span></th>
+                    <th scope="col" ><span>Importe Total Comp</span></th>
+                    <th scope="col" ><span>Cod Moneda</span></th>
+                    <th scope="col" ><span>Tip Cambio</span></th>
+                    <th scope="col" ><span>Fec Emi Modif</span></th>
+                    <th scope="col" ><span>Tip Comp Modif</span></th>
+                    <th scope="col" ><span>Nro Serie Comp Modif</span></th>
+                    <th scope="col" ><span>Nro Comp Modif</span></th>
+                    <th scope="col" ><span>Ident Contrato</span></th>
+                    <th scope="col" ><span>Err Tip Uno</span></th>
+                    <th scope="col" ><span>Ind Comp Vanc Mp</span></th>
+                    <th scope="col" ><span>Estado Opera Canc Mp</span></th>
+                    <th scope="col" ><span>Campo Libre</span></th>
+                    <th scope="col" ><span>Ind Del</span></th>
+                    <th scope="col" ><span>Fec Crea</span></th>
+                    <th scope="col" ><span>Usu Crea</span></th>
+                    <th scope="col" ><span>Ip Crea</span></th>
+                    <th scope="col" ><span>Fec Modif</span></th>
+                    <th scope="col" ><span>Usu Modif</span></th>
+                    <th scope="col" ><span>Ip Modif</span></th>
+                    <th scope="col" ><span>Servidor</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let regVenta of regVentas ;trackBy: trackId">
+                    <td><a [routerLink]="['/reg-venta', regVenta.id, 'view']">{{ regVenta.id }}</a></td>
+                    <td>{{ regVenta.periodo }}</td>
+                    <td>{{ regVenta.mes }}</td>
+                    <td>{{ regVenta.asientContab }}</td>
+                    <td>{{ regVenta.fecEmiComp | date:'medium' }}</td>
+                    <td>{{ regVenta.fecVencComp | date:'medium' }}</td>
+                    <td>{{ regVenta.tipComp }}</td>
+                    <td>{{ regVenta.nroSerieComp }}</td>
+                    <td>{{ regVenta.nroComp }}</td>
+                    <td>{{ regVenta.consoDia }}</td>
+                    <td>{{ regVenta.tipDocCli }}</td>
+                    <td>{{ regVenta.nroDocCli }}</td>
+                    <td>{{ regVenta.apeRazSocCli }}</td>
+                    <td>{{ regVenta.valFacExpor }}</td>
+                    <td>{{ regVenta.baseImpOperGrav }}</td>
+                    <td>{{ regVenta.dsctoBaseImp }}</td>
+                    <td>{{ regVenta.igvIpm }}</td>
+                    <td>{{ regVenta.dsctoIgvIpm }}</td>
+                    <td>{{ regVenta.impOpeExo }}</td>
+                    <td>{{ regVenta.impTotOpeInafec }}</td>
+                    <td>{{ regVenta.impSecCons }}</td>
+                    <td>{{ regVenta.baseImpArroz }}</td>
+                    <td>{{ regVenta.impVentArroz }}</td>
+                    <td>{{ regVenta.otrosNoBaseImp }}</td>
+                    <td>{{ regVenta.importeTotalComp }}</td>
+                    <td>{{ regVenta.codMoneda }}</td>
+                    <td>{{ regVenta.tipCambio }}</td>
+                    <td>{{ regVenta.fecEmiModif | date:'medium' }}</td>
+                    <td>{{ regVenta.tipCompModif }}</td>
+                    <td>{{ regVenta.nroSerieCompModif }}</td>
+                    <td>{{ regVenta.nroCompModif }}</td>
+                    <td>{{ regVenta.identContrato }}</td>
+                    <td>{{ regVenta.errTipUno }}</td>
+                    <td>{{ regVenta.indCompVancMp }}</td>
+                    <td>{{ regVenta.estadoOperaCancMp }}</td>
+                    <td>{{ regVenta.campoLibre }}</td>
+                    <td>{{ regVenta.indDel }}</td>
+                    <td>{{ regVenta.fecCrea | date:'medium' }}</td>
+                    <td>{{ regVenta.usuCrea }}</td>
+                    <td>{{ regVenta.ipCrea }}</td>
+                    <td>{{ regVenta.fecModif | date:'medium' }}</td>
+                    <td>{{ regVenta.usuModif }}</td>
+                    <td>{{ regVenta.ipModif }}</td>
+                    <td>
+                        <div *ngIf="regVenta.servidor">
+                            <a [routerLink]="['/orden', regVenta.servidor?.id, 'view']" >{{ regVenta.servidor?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/reg-venta', regVenta.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/reg-venta', regVenta.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(regVenta)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

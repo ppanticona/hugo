@@ -1,0 +1,85 @@
+<div>
+    <h2 id="page-heading">
+        <span>Productos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-producto" [routerLink]="['/producto/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Producto
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="productos?.length === 0">
+        <span>No productos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="productos && productos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Descripcion</span></th>
+                    <th scope="col" ><span>Valor</span></th>
+                    <th scope="col" ><span>Fec Ini Vig</span></th>
+                    <th scope="col" ><span>Fec Fin Vig</span></th>
+                    <th scope="col" ><span>Estado</span></th>
+                    <th scope="col" ><span>Version</span></th>
+                    <th scope="col" ><span>Ind Del</span></th>
+                    <th scope="col" ><span>Fec Crea</span></th>
+                    <th scope="col" ><span>Usu Crea</span></th>
+                    <th scope="col" ><span>Ip Crea</span></th>
+                    <th scope="col" ><span>Fec Modif</span></th>
+                    <th scope="col" ><span>Usu Modif</span></th>
+                    <th scope="col" ><span>Ip Modif</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let producto of productos ;trackBy: trackId">
+                    <td><a [routerLink]="['/producto', producto.id, 'view']">{{ producto.id }}</a></td>
+                    <td>{{ producto.descripcion }}</td>
+                    <td>{{ producto.valor }}</td>
+                    <td>{{ producto.fecIniVig | date:'medium' }}</td>
+                    <td>{{ producto.fecFinVig | date:'medium' }}</td>
+                    <td>{{ producto.estado }}</td>
+                    <td>{{ producto.version }}</td>
+                    <td>{{ producto.indDel }}</td>
+                    <td>{{ producto.fecCrea | date:'medium' }}</td>
+                    <td>{{ producto.usuCrea }}</td>
+                    <td>{{ producto.ipCrea }}</td>
+                    <td>{{ producto.fecModif | date:'medium' }}</td>
+                    <td>{{ producto.usuModif }}</td>
+                    <td>{{ producto.ipModif }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/producto', producto.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/producto', producto.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(producto)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

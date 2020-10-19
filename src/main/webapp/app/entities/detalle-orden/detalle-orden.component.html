@@ -1,0 +1,105 @@
+<div>
+    <h2 id="page-heading">
+        <span>Detalle Ordens</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-detalle-orden" [routerLink]="['/detalle-orden/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Detalle Orden
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="detalleOrdens?.length === 0">
+        <span>No detalleOrdens found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="detalleOrdens && detalleOrdens.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Cantidad</span></th>
+                    <th scope="col" ><span>Val Uni</span></th>
+                    <th scope="col" ><span>Dcto</span></th>
+                    <th scope="col" ><span>Subtotal</span></th>
+                    <th scope="col" ><span>Observacion</span></th>
+                    <th scope="col" ><span>Estado</span></th>
+                    <th scope="col" ><span>Version</span></th>
+                    <th scope="col" ><span>Ind Del</span></th>
+                    <th scope="col" ><span>Fec Crea</span></th>
+                    <th scope="col" ><span>Usu Crea</span></th>
+                    <th scope="col" ><span>Ip Crea</span></th>
+                    <th scope="col" ><span>Fec Modif</span></th>
+                    <th scope="col" ><span>Usu Modif</span></th>
+                    <th scope="col" ><span>Ip Modif</span></th>
+                    <th scope="col" ><span>Orden</span></th>
+                    <th scope="col" ><span>Producto</span></th>
+                    <th scope="col" ><span>Promocion</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let detalleOrden of detalleOrdens ;trackBy: trackId">
+                    <td><a [routerLink]="['/detalle-orden', detalleOrden.id, 'view']">{{ detalleOrden.id }}</a></td>
+                    <td>{{ detalleOrden.cantidad }}</td>
+                    <td>{{ detalleOrden.valUni }}</td>
+                    <td>{{ detalleOrden.dcto }}</td>
+                    <td>{{ detalleOrden.subtotal }}</td>
+                    <td>{{ detalleOrden.observacion }}</td>
+                    <td>{{ detalleOrden.estado }}</td>
+                    <td>{{ detalleOrden.version }}</td>
+                    <td>{{ detalleOrden.indDel }}</td>
+                    <td>{{ detalleOrden.fecCrea | date:'medium' }}</td>
+                    <td>{{ detalleOrden.usuCrea }}</td>
+                    <td>{{ detalleOrden.ipCrea }}</td>
+                    <td>{{ detalleOrden.fecModif | date:'medium' }}</td>
+                    <td>{{ detalleOrden.usuModif }}</td>
+                    <td>{{ detalleOrden.ipModif }}</td>
+                    <td>
+                        <div *ngIf="detalleOrden.orden">
+                            <a [routerLink]="['/orden', detalleOrden.orden?.id, 'view']" >{{ detalleOrden.orden?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="detalleOrden.producto">
+                            <a [routerLink]="['/producto', detalleOrden.producto?.id, 'view']" >{{ detalleOrden.producto?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="detalleOrden.promocion">
+                            <a [routerLink]="['/promocion', detalleOrden.promocion?.id, 'view']" >{{ detalleOrden.promocion?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/detalle-orden', detalleOrden.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/detalle-orden', detalleOrden.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(detalleOrden)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<div>
+    <h2 id="page-heading">
+        <span>Ordens</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-orden" [routerLink]="['/orden/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Orden
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="ordens?.length === 0">
+        <span>No ordens found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="ordens && ordens.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Fec Esti Ent</span></th>
+                    <th scope="col" ><span>Fec Recog</span></th>
+                    <th scope="col" ><span>Observacion</span></th>
+                    <th scope="col" ><span>Estado</span></th>
+                    <th scope="col" ><span>Version</span></th>
+                    <th scope="col" ><span>Ind Del</span></th>
+                    <th scope="col" ><span>Fec Crea</span></th>
+                    <th scope="col" ><span>Usu Crea</span></th>
+                    <th scope="col" ><span>Ip Crea</span></th>
+                    <th scope="col" ><span>Fec Modif</span></th>
+                    <th scope="col" ><span>Usu Modif</span></th>
+                    <th scope="col" ><span>Ip Modif</span></th>
+                    <th scope="col" ><span>Cliente</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let orden of ordens ;trackBy: trackId">
+                    <td><a [routerLink]="['/orden', orden.id, 'view']">{{ orden.id }}</a></td>
+                    <td>{{ orden.fecEstiEnt | date:'medium' }}</td>
+                    <td>{{ orden.fecRecog | date:'medium' }}</td>
+                    <td>{{ orden.observacion }}</td>
+                    <td>{{ orden.estado }}</td>
+                    <td>{{ orden.version }}</td>
+                    <td>{{ orden.indDel }}</td>
+                    <td>{{ orden.fecCrea | date:'medium' }}</td>
+                    <td>{{ orden.usuCrea }}</td>
+                    <td>{{ orden.ipCrea }}</td>
+                    <td>{{ orden.fecModif | date:'medium' }}</td>
+                    <td>{{ orden.usuModif }}</td>
+                    <td>{{ orden.ipModif }}</td>
+                    <td>
+                        <div *ngIf="orden.cliente">
+                            <a [routerLink]="['/cliente', orden.cliente?.id, 'view']" >{{ orden.cliente?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/orden', orden.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/orden', orden.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(orden)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="autorizacion">
+            <h2><span>Autorizacion</span> {{ autorizacion.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Tip Autorizacion</span></dt>
+                <dd>
+                    <span>{{ autorizacion.tipAutorizacion }}</span>
+                </dd>
+                <dt><span>Token</span></dt>
+                <dd>
+                    <span>{{ autorizacion.token }}</span>
+                </dd>
+                <dt><span>Fec Ini Vig</span></dt>
+                <dd>
+                    <span>{{ autorizacion.fecIniVig }}</span>
+                </dd>
+                <dt><span>Fec Fin Vig</span></dt>
+                <dd>
+                    <span>{{ autorizacion.fecFinVig }}</span>
+                </dd>
+                <dt><span>Estado</span></dt>
+                <dd>
+                    <span>{{ autorizacion.estado }}</span>
+                </dd>
+                <dt><span>Version</span></dt>
+                <dd>
+                    <span>{{ autorizacion.version }}</span>
+                </dd>
+                <dt><span>Ind Del</span></dt>
+                <dd>
+                    <span>{{ autorizacion.indDel }}</span>
+                </dd>
+                <dt><span>Fec Crea</span></dt>
+                <dd>
+                    <span>{{ autorizacion.fecCrea }}</span>
+                </dd>
+                <dt><span>Usu Crea</span></dt>
+                <dd>
+                    <span>{{ autorizacion.usuCrea }}</span>
+                </dd>
+                <dt><span>Ip Crea</span></dt>
+                <dd>
+                    <span>{{ autorizacion.ipCrea }}</span>
+                </dd>
+                <dt><span>Fec Modif</span></dt>
+                <dd>
+                    <span>{{ autorizacion.fecModif }}</span>
+                </dd>
+                <dt><span>Usu Modif</span></dt>
+                <dd>
+                    <span>{{ autorizacion.usuModif }}</span>
+                </dd>
+                <dt><span>Ip Modif</span></dt>
+                <dd>
+                    <span>{{ autorizacion.ipModif }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/autorizacion', autorizacion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

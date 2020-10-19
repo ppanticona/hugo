@@ -1,0 +1,94 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="promocion">
+            <h2><span>Promocion</span> {{ promocion.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Tip Promocion</span></dt>
+                <dd>
+                    <span>{{ promocion.tipPromocion }}</span>
+                </dd>
+                <dt><span>Val 1</span></dt>
+                <dd>
+                    <span>{{ promocion.val1 }}</span>
+                </dd>
+                <dt><span>Val 2</span></dt>
+                <dd>
+                    <span>{{ promocion.val2 }}</span>
+                </dd>
+                <dt><span>Val 3</span></dt>
+                <dd>
+                    <span>{{ promocion.val3 }}</span>
+                </dd>
+                <dt><span>Max Prom</span></dt>
+                <dd>
+                    <span>{{ promocion.maxProm }}</span>
+                </dd>
+                <dt><span>Fec Ini Vig</span></dt>
+                <dd>
+                    <span>{{ promocion.fecIniVig }}</span>
+                </dd>
+                <dt><span>Fec Fin Vig</span></dt>
+                <dd>
+                    <span>{{ promocion.fecFinVig }}</span>
+                </dd>
+                <dt><span>Comentarios</span></dt>
+                <dd>
+                    <span>{{ promocion.comentarios }}</span>
+                </dd>
+                <dt><span>Estado</span></dt>
+                <dd>
+                    <span>{{ promocion.estado }}</span>
+                </dd>
+                <dt><span>Version</span></dt>
+                <dd>
+                    <span>{{ promocion.version }}</span>
+                </dd>
+                <dt><span>Ind Del</span></dt>
+                <dd>
+                    <span>{{ promocion.indDel }}</span>
+                </dd>
+                <dt><span>Fec Crea</span></dt>
+                <dd>
+                    <span>{{ promocion.fecCrea }}</span>
+                </dd>
+                <dt><span>Usu Crea</span></dt>
+                <dd>
+                    <span>{{ promocion.usuCrea }}</span>
+                </dd>
+                <dt><span>Ip Crea</span></dt>
+                <dd>
+                    <span>{{ promocion.ipCrea }}</span>
+                </dd>
+                <dt><span>Fec Modif</span></dt>
+                <dd>
+                    <span>{{ promocion.fecModif }}</span>
+                </dd>
+                <dt><span>Usu Modif</span></dt>
+                <dd>
+                    <span>{{ promocion.usuModif }}</span>
+                </dd>
+                <dt><span>Ip Modif</span></dt>
+                <dd>
+                    <span>{{ promocion.ipModif }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/promocion', promocion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span>Promocions</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-promocion" [routerLink]="['/promocion/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Promocion
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="promocions?.length === 0">
+        <span>No promocions found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="promocions && promocions.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Tip Promocion</span></th>
+                    <th scope="col" ><span>Val 1</span></th>
+                    <th scope="col" ><span>Val 2</span></th>
+                    <th scope="col" ><span>Val 3</span></th>
+                    <th scope="col" ><span>Max Prom</span></th>
+                    <th scope="col" ><span>Fec Ini Vig</span></th>
+                    <th scope="col" ><span>Fec Fin Vig</span></th>
+                    <th scope="col" ><span>Comentarios</span></th>
+                    <th scope="col" ><span>Estado</span></th>
+                    <th scope="col" ><span>Version</span></th>
+                    <th scope="col" ><span>Ind Del</span></th>
+                    <th scope="col" ><span>Fec Crea</span></th>
+                    <th scope="col" ><span>Usu Crea</span></th>
+                    <th scope="col" ><span>Ip Crea</span></th>
+                    <th scope="col" ><span>Fec Modif</span></th>
+                    <th scope="col" ><span>Usu Modif</span></th>
+                    <th scope="col" ><span>Ip Modif</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let promocion of promocions ;trackBy: trackId">
+                    <td><a [routerLink]="['/promocion', promocion.id, 'view']">{{ promocion.id }}</a></td>
+                    <td>{{ promocion.tipPromocion }}</td>
+                    <td>{{ promocion.val1 }}</td>
+                    <td>{{ promocion.val2 }}</td>
+                    <td>{{ promocion.val3 }}</td>
+                    <td>{{ promocion.maxProm }}</td>
+                    <td>{{ promocion.fecIniVig | date:'medium' }}</td>
+                    <td>{{ promocion.fecFinVig | date:'medium' }}</td>
+                    <td>{{ promocion.comentarios }}</td>
+                    <td>{{ promocion.estado }}</td>
+                    <td>{{ promocion.version }}</td>
+                    <td>{{ promocion.indDel }}</td>
+                    <td>{{ promocion.fecCrea | date:'medium' }}</td>
+                    <td>{{ promocion.usuCrea }}</td>
+                    <td>{{ promocion.ipCrea }}</td>
+                    <td>{{ promocion.fecModif | date:'medium' }}</td>
+                    <td>{{ promocion.usuModif }}</td>
+                    <td>{{ promocion.ipModif }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/promocion', promocion.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/promocion', promocion.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(promocion)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

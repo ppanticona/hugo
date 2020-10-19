@@ -1,0 +1,262 @@
+{
+  "name": "RegVenta",
+  "fields": [
+    {
+      "fieldName": "periodo",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "mes",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "asientContab",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fecEmiComp",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "fecVencComp",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "tipComp",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "nroSerieComp",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "nroComp",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "consoDia",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tipDocCli",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "nroDocCli",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "apeRazSocCli",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "valFacExpor",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "baseImpOperGrav",
+      "fieldType": "Double",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "dsctoBaseImp",
+      "fieldType": "Double",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "igvIpm",
+      "fieldType": "Float",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "dsctoIgvIpm",
+      "fieldType": "Float",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "impOpeExo",
+      "fieldType": "Float",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "impTotOpeInafec",
+      "fieldType": "Float",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "impSecCons",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "baseImpArroz",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "impVentArroz",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "otrosNoBaseImp",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "importeTotalComp",
+      "fieldType": "Double",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "codMoneda",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "tipCambio",
+      "fieldType": "Float",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "fecEmiModif",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "tipCompModif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nroSerieCompModif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nroCompModif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "identContrato",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "errTipUno",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indCompVancMp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estadoOperaCancMp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "campoLibre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indDel",
+      "fieldType": "Boolean",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "fecCrea",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "usuCrea",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "ipCrea",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "fecModif",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "usuModif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ipModif",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "orden",
+      "otherEntityRelationshipName": "regVenta",
+      "relationshipName": "servidor",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201019024811",
+  "entityTableName": "reg_venta",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

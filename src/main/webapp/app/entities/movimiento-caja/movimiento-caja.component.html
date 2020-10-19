@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span>Movimiento Cajas</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-movimiento-caja" [routerLink]="['/movimiento-caja/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Movimiento Caja
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="movimientoCajas?.length === 0">
+        <span>No movimientoCajas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="movimientoCajas && movimientoCajas.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Tip Movimiento</span></th>
+                    <th scope="col" ><span>Monto</span></th>
+                    <th scope="col" ><span>Fec Movimiento</span></th>
+                    <th scope="col" ><span>Version</span></th>
+                    <th scope="col" ><span>Ind Del</span></th>
+                    <th scope="col" ><span>Fec Crea</span></th>
+                    <th scope="col" ><span>Usu Crea</span></th>
+                    <th scope="col" ><span>Ip Crea</span></th>
+                    <th scope="col" ><span>Fec Modif</span></th>
+                    <th scope="col" ><span>Usu Modif</span></th>
+                    <th scope="col" ><span>Ip Modif</span></th>
+                    <th scope="col" ><span>Caja</span></th>
+                    <th scope="col" ><span>Autorizacion</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let movimientoCaja of movimientoCajas ;trackBy: trackId">
+                    <td><a [routerLink]="['/movimiento-caja', movimientoCaja.id, 'view']">{{ movimientoCaja.id }}</a></td>
+                    <td>{{ movimientoCaja.tipMovimiento }}</td>
+                    <td>{{ movimientoCaja.monto }}</td>
+                    <td>{{ movimientoCaja.fecMovimiento | date:'medium' }}</td>
+                    <td>{{ movimientoCaja.version }}</td>
+                    <td>{{ movimientoCaja.indDel }}</td>
+                    <td>{{ movimientoCaja.fecCrea | date:'medium' }}</td>
+                    <td>{{ movimientoCaja.usuCrea }}</td>
+                    <td>{{ movimientoCaja.ipCrea }}</td>
+                    <td>{{ movimientoCaja.fecModif | date:'medium' }}</td>
+                    <td>{{ movimientoCaja.usuModif }}</td>
+                    <td>{{ movimientoCaja.ipModif }}</td>
+                    <td>
+                        <div *ngIf="movimientoCaja.caja">
+                            <a [routerLink]="['/caja', movimientoCaja.caja?.id, 'view']" >{{ movimientoCaja.caja?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="movimientoCaja.autorizacion">
+                            <a [routerLink]="['/autorizacion', movimientoCaja.autorizacion?.id, 'view']" >{{ movimientoCaja.autorizacion?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/movimiento-caja', movimientoCaja.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/movimiento-caja', movimientoCaja.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(movimientoCaja)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
