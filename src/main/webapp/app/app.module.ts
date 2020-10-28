@@ -7,6 +7,7 @@ import { HugoCoreModule } from 'app/core/core.module';
 import { HugoAppRoutingModule } from './app-routing.module';
 import { HugoHomeModule } from './home/home.module';
 import { HugoEntityModule } from './entities/entity.module';
+import { HugoOrdenModule } from './orden/orden.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -22,6 +23,7 @@ import { ErrorComponent } from './layouts/error/error.component';
     HugoHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     HugoEntityModule,
+    HugoOrdenModule,
     HugoAppRoutingModule,
   ],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],

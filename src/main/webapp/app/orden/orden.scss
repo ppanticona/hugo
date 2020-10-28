@@ -1,0 +1,72 @@
+/* ==========================================================================
+Main page styles
+========================================================================== */
+
+/* wait autoprefixer update to allow simple generation of high pixel density media query */
+
+.animate-opacity {
+  animation: opac 1.5s;
+}
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animated {
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fast {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.fadeIn {
+  animation: fadeIn 1s;
+}
+
+.ds-btn li {
+  list-style: none;
+  float: left;
+  padding: 10px;
+}
+.ds-btn li a span {
+  padding-left: 15px;
+  padding-right: 5px;
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+}
+.ds-btn li a span small {
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+}
+
+.btn-sq-lg {
+  width: 150px !important;
+  height: 150px !important;
+}
+
+tbody {
+  display: block;
+  max-height: 500px;
+  overflow-y: auto;
+}
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+thead {
+  width: calc(100% - 1em);
+}

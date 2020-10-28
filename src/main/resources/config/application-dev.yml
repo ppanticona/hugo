@@ -37,8 +37,8 @@ spring:
       indent-output: true
   data:
     mongodb:
-      uri: mongodb://15.228.77.183:27017
-      database: hugo
+      uri: mongodb://18.231.167.5:27017
+      database: hugobd
   mail:
     host: localhost
     port: 25

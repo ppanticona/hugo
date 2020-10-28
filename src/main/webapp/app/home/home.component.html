@@ -1,43 +1,90 @@
 <div class="row">
-    <div class="col-md-3">
-        <span class="hipster img-fluid rounded"></span>
-    </div>
+    <div class="col-md-12">
+        <div class="row">
 
-    <div class="col-md-9">
-        <h1 class="display-4">Welcome, Java Hipster!</h1>
+            <div class="col-sm-4">
+                <a href="#" class="btn btn-sq-lg btn-warning btn-block" routerLink="ingresoPrendas" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
 
-        <p class="lead">This is your homepage</p>
-
-        <div [ngSwitch]="isAuthenticated()">
-            <div class="alert alert-success" *ngSwitchCase="true">
-                <span id="home-logged-message" *ngIf="account">You are logged in as user "{{ account.login }}".</span>
+                   INGRESO PRENDAS<br>
+                </a>
             </div>
 
-            <div class="alert alert-warning" *ngSwitchCase="false">
-                <span>If you want to </span>
-                <a class="alert-link" (click)="login()">sign in</a><span>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>
+
+            <div class="col-sm-4">
+                <a href="#" class="btn btn-sq-lg btn-warning btn-block" routerLink="salidaPrendas" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+
+                    SALIDA PRENDAS<br>
+                </a>
             </div>
 
-            <div class="alert alert-warning" *ngSwitchCase="false">
-                <span>You don't have an account yet?</span>&nbsp;
-                <a class="alert-link" routerLink="account/register">Register a new account</a>
+
+
+
+        </div>
+
+        CAJA
+        <hr class="mt-2 mb-3"/>
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="#" class="btn btn-sq-lg btn-secondary btn-block" routerLink="clusterkafka" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+
+                    APERTURAR CAJA<br>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="#" class="btn btn-sq-lg btn-success btn-block" routerLink="servidores" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+
+                    CERRAR CAJA<br>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="#" class="btn btn-sq-lg btn-dark btn-block" routerLink="contratos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+
+                    INGRESOS EGRESOS<br>
+                </a>
             </div>
         </div>
 
-        <p>
-            If you have any question on JHipster:
-        </p>
+        ADMINISTRACION
+        <hr class="mt-2 mb-3"/>
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="#" class="btn btn-sq-lg btn-warning btn-block"routerLink="clusterredis" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" >
 
-        <ul>
-            <li><a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">JHipster homepage</a></li>
-            <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">JHipster on Stack Overflow</a></li>
-            <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer">JHipster bug tracker</a></li>
-            <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">JHipster public chat room</a></li>
-            <li><a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer">follow @jhipster on Twitter</a></li>
-        </ul>
+                    USUARIOS<br>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="#" class="btn btn-sq-lg btn-success btn-block" routerLink="servidores" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
 
-        <p>
-            <span>If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">GitHub</a>!
-        </p>
+                    PRODUCTOS<br>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="#" class="btn btn-sq-lg btn-dark btn-block" routerLink="contratos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+
+                    PROMOCIONES<br>
+                </a>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <a class="btn btn-sq-lg btn-primary btn-block" routerLink="publicacionweb" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+
+                    Inventario <br>
+                </a>
+            </div>
+
+
+
+
+
+        </div>
+
+
+
     </div>
+
+
 </div>

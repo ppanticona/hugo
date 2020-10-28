@@ -1,0 +1,291 @@
+<div class=" animated fadeIn"  >
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card ">
+               <div class="card border-info ">
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-2 align-self-center">
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Doc. Cliente :</label>
+                                    <select class="form-control"
+                                            id="exampleFormControlSelect1"
+                                            required
+                                            name="codCli">
+                                        <option value="produccion">DNI</option>
+                                        <option value="calidad">RUC</option>
+                                        <option value="desarrollo">CARNÉ EXTRANJERIA</option>
+                                        <option value="desarrollo">PASAPORTE</option>
+
+                                    </select>
+                                    <div class="invalid-feedback">Debe Seleccionar una tecnologia</div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-10 align-self-center">
+                                <div class="form-group">
+                                    <label >Numero  Documento Cliente :</label>
+                                    <input class="form-control"
+                                           type="text"
+                                           required
+                                           placeholder="Ingrese numero documento"
+                                           name="nombre">
+                                    <div class="invalid-feedback">Debe Ingresar un numero </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card ">
+                <div class="card border-info ">
+                    <div class="card-header">
+                        <div class="row">
+
+                            <h3 >Detalle Orden</h3>
+
+
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 align-self-center">
+                                <div class="form-group">
+                                    <label >Cantidad :</label>
+                                    <input class="form-control"
+                                           type="text"
+                                           required
+                                           placeholder="Ingrese cantidad"
+                                           name="cnt">
+                                    <div class="invalid-feedback">Debe Ingresar un numero </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center">
+                                <div class="form-group">
+                                    <label >Codigo Producto :</label>
+                                    <input class="form-control"
+                                           type="text"
+                                           required
+                                           placeholder="Ingrese codigo producto"
+                                           name="codprod">
+                                    <div class="invalid-feedback">Debe Ingresar un numero </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center">
+                                <div class="form-group">
+                                    <label >Valor Unitario :</label>
+                                    <input class="form-control"
+                                           type="text"
+                                           required
+                                           disabled
+                                           name="nombre">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Observaciones:</label>
+                                    <textarea class="form-control" required id="exampleFormControlTextarea1" rows="3" ></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center">
+                                <div class="form-group">
+                                    <label >Piezas :</label>
+                                    <input class="form-control"
+                                           type="text"
+                                           required
+                                           disabled
+                                           name="nombre">
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row justify-content-end">
+                            <div class="col-md-2 align-self-center">
+                                <button type="button" class="btn btn-outline-primary btn-block">Agregar Detalle</button>
+                            </div>
+
+                        </div>
+                        <hr class="mt-2 mb-3"/>
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="row ">
+                                    <div class="col-md-12">
+                                        <table class="table table-bordered " >
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center"> CNT </th>
+                                                <th class="text-center"> Producto </th>
+                                                <th class="text-center"> Pzs </th>
+                                                <th class="text-center"> Val Unitario </th>
+                                                <th class="text-center"> Total  </th>
+                                                <th class="text-center"> trash  </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr >
+                                                <td>1</td>
+                                                <td><input type="text" name='product'  placeholder='Enter Product Name' /></td>
+                                                <td><input type="number" name='qty' placeholder='Enter Qty' /></td>
+                                                <td><input type="number" name='price' placeholder='Enter Unit Price' /></td>
+                                                <td><input type="number" name='total' placeholder='0.00' /></td>
+                                                <td class="text-center"> trash  </td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+
+
+                                </div>
+
+                                <div class="row justify-content-end" style="margin-top:20px">
+                                    <div class="pull-right col-md-4">
+                                        <table class="table table-bordered table-hover" id="tab_logic_total">
+                                            <tbody>
+                                            <tr>
+                                                <th class="text-center">Sub Total</th>
+                                                <td class="text-center"><input type="number" name='sub_total' placeholder='0.00' class="form-control" id="sub_total" readonly/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">Cod. Promo</th>
+                                                <td class="text-center"><div class="input-group mb-2 mb-sm-0">
+                                                    <input type="number" class="form-control" id="tax" placeholder="0">
+                                                    <div class="input-group-addon">%</div>
+                                                </div></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">A cuenta</th>
+                                                <td class="text-center"><input type="number" name='tax_amount' id="tax_amount" placeholder='0.00' class="form-control" readonly/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">Total Orden</th>
+                                                <td class="text-center"><input type="number" name='total_amount' id="total_amount" placeholder='0.00' class="form-control" readonly/></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div class="col-md-4 align-self-center">
+                                <button type="button" class="btn btn-primary btn-block">GENERAR ORDEN</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <div class="card ">
+                <div class="card border-info ">
+                    <div class="card-header">
+                        <div class="row">
+
+                                <h3 >Productos</h3>
+
+
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+
+
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+
+                                    <th scope="col">Cod</th>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Valor</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+
+                                    <td>1001</td>
+                                    <td>Lavado Terno</td>
+                                    <td>15.00</td>
+                                </tr>
+                                <tr>
+
+                                    <td>1002</td>
+                                    <td>Lavado Edredon</td>
+                                    <td>16.00</td>
+                                </tr>
+                                <tr>
+
+                                    <td>1003</td>
+                                    <td>Lavado Alfombra</td>
+                                    <td>25.00</td>
+                                </tr>
+                                <tr>
+
+                                    <td>1003</td>
+                                    <td>Lavado Alfombra</td>
+                                    <td>25.00</td>
+                                </tr>
+                                <tr>
+
+                                    <td>1003</td>
+                                    <td>Lavado Alfombra</td>
+                                    <td>25.00</td>
+                                </tr>
+                                <tr>
+
+                                    <td>1003</td>
+                                    <td>Lavado Alfombra</td>
+                                    <td>25.00</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div *ngIf="buscarPor=='dominio'"  class="row">
+
+
+    </div>
+
+
+</div>
+
